@@ -1,0 +1,52 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-6 col-md-12 col-sm-12" *ngFor="let staffDetail of staffDetails">
+                <div class="card card-stats">
+                    <div class="card-header" [style.background-color]="staffDetail.cardBackgroundColor">
+                        <i class="material-icons">{{staffDetail.logoUrl}}</i>
+                    </div>
+                    <div class="card-content table-responsive">
+                        <h3 class="title">{{staffDetail.staffType}}</h3>
+                        <table class="table table-responsive table-hover">
+                            <thead>
+                            <tr class="text-center">
+                                <td class="text-warning">Required</td>
+                                <td class="text-success">Employed</td>
+                                <td class="text-danger">Salary</td>
+                                <td class="text-primary">Morale</td>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr class="text-center">
+                                <td class="text-warning">{{staffDetail.required}}</td>
+                                <td class="text-success">{{staffDetail.employed}}</td>
+                                <td class="text-danger">${{staffDetail.salary}}</td>
+                                <td class="text-primary">{{staffDetail.morale}}%</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="card-footer">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="btn-group" role="group" aria-label="Salary Increment Button Group">
+                                    <button type="button" class="btn btn-sm btn-primary"><i class="material-icons">add</i></button>
+                                    <button type="button" class="btn btn-sm" disabled><i class="material-icons">euro_symbol</i></button>
+                                    <button type="button" class="btn btn-sm btn-secondary"><i class="material-icons">remove</i></button>
+                                </div>
+                            </div>
+                            <div class="col-md-6 text-center">
+                                <div class="btn-group" role="group" aria-label="Personnel Increment Button Group">
+                                    <button type="button" class="btn btn-sm btn-primary"><i class="material-icons">add</i></button>
+                                    <button type="button" class="btn btn-sm" disabled><i class="material-icons">account_box</i></button>
+                                    <button type="button" class="btn btn-sm btn-secondary"><i class="material-icons">remove</i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

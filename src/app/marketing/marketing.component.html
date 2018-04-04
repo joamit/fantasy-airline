@@ -1,0 +1,47 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card card-plain">
+                    <div class="card-header" data-background-color="red">
+                        <h5>
+                            <span>Campaigns</span>
+                            <a class='pull-right' href="#dummy"><i class="fa fa-2x fa-plus-circle"></i> </a>
+                        </h5>
+                    </div>
+                    <div class="card-content table-responsive">
+                        <table class="table table-hover table-bordered">
+                            <tbody>
+                            <tr *ngFor="let campaign of campaigns">
+                                <div class="row">
+                                    <div class="col-md-6 text-warning">
+                                        <h5 class="title text-center font-weight-bold">{{campaign.campaignName}}</h5>
+                                    </div>
+                                    <div class="col-md-6 text-primary">
+                                        <h5 class="title text-center">${{campaign.campaignAmount}}</h5>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <p class="text-center text-primary">Efficiency</p>
+                                        <p class="category text-center">{{campaign.campaignEfficiency}}%</p>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <p class="text-center text-success">Reach</p>
+                                        <p class="category text-center">{{campaign.campaignReach}}</p>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <p class="text-center text-danger">Ends In</p>
+                                        <p class="category text-center">{{campaign.endTime | date : 'medium'}}</p>
+                                    </div>
+                                </div>
+                            </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
