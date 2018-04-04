@@ -6,7 +6,7 @@ You can find the Github Repo here.
 
 ## Links:
 
-+ [Live Preview]())
++ [Live Preview]((https://joamit.github.io/fantasy-airline/dashboard))
 
 ## Quick start
 
