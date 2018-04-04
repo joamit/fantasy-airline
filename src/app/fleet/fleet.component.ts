@@ -18,7 +18,7 @@ interface Fleet {
 })
 export class FleetComponent implements OnInit {
 
-    private fleet: Fleet[] = [
+    fleet: Fleet[] = [
         {
             logo: './assets/img/logo/saab-logo.png',
             aircraftDesignation: 'JB-TY8',
