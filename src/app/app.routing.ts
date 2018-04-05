@@ -10,6 +10,7 @@ import {FleetComponent} from './fleet/fleet.component';
 import {MarketingComponent} from './marketing/marketing.component';
 import {FlightComponent} from './flight/flight.component';
 import {StaffComponent} from './staff/staff.component';
+import {FlightDetailComponent} from './flight/detail/flight.detail.component';
 
 const routes: Routes = [
     {path: 'dashboard', component: DashboardComponent},
@@ -17,6 +18,7 @@ const routes: Routes = [
     {path: 'fleet', component: FleetComponent},
     {path: 'marketing', component: MarketingComponent},
     {path: 'flight', component: FlightComponent},
+    {path: 'flight-detail', component: FlightDetailComponent},
     {path: 'staff', component: StaffComponent},
     {path: 'user-profile', component: UserProfileComponent},
     {path: '', redirectTo: 'dashboard', pathMatch: 'full'}

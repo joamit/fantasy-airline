@@ -4,39 +4,40 @@
             <div class="col-md-12">
                 <div class="card card-plain">
                     <div class="card-content table-responsive">
-                        <table class="table table-hover table-bordered">
+                        <table class="table table-hover table-bordered table-striped">
                             <tbody>
                             <tr *ngFor="let ac of fleet">
-                                <div class="row">
-                                    <div class="col-md-12 text-center">
-                                        <h5 class="category text-center">
-                                            <img class="text-center" src="{{ac.logo}}" height="32" width="32"/>&nbsp;{{ac.aircraftDesignation}}
-                                        </h5>
+                                <div [routerLink]="['/flight-detail']">
+                                    <div class="row">
+                                        <div class="col-md-12 text-center">
+                                            <h5 class="category text-center">
+                                                <img class="text-center" src="{{ac.logo}}" height="32" width="32"/>&nbsp;{{ac.aircraftDesignation}}
+                                            </h5>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-4">
-                                        <p class="title text-center text-success">Aircraft</p>
-                                        <p class="category text-center">{{ac.aircraftName}}</p>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <p class="title text-center text-warning">Hours to Maintenance</p>
-                                        <p class="category text-center">
-                                            <span class="text-info" style="margin-right: 10px;">A : {{ac.hoursToCheckA}}</span>
-                                            <span class="text-primary" style="margin-right: 10px;">B : {{ac.hoursToCheckB}} </span>
-                                            <span class="text-success" style="margin-right: 10px;">C : {{ac.hoursToCheckC}}</span>
-                                            <span class="text-warning">D : {{ac.hoursToCheckD}}</span></p>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <p class="title text-center text-primary">Route</p>
-                                        <p class="category text-center">
-                                            <i class="material-icons text-success" *ngIf="ac.route">done</i>
-                                            <i class="material-icons text-danger" *ngIf="!ac.route">clear</i>
-                                        </p>
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <p class="title text-center text-success">Aircraft</p>
+                                            <p class="category text-center">{{ac.aircraftName}}</p>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <p class="title text-center text-warning">Hours to Maintenance</p>
+                                            <p class="category text-center">
+                                                <span class="text-info" style="margin-right: 10px;">A : {{ac.hoursToCheckA}}</span>
+                                                <span class="text-primary" style="margin-right: 10px;">B : {{ac.hoursToCheckB}} </span>
+                                                <span class="text-success" style="margin-right: 10px;">C : {{ac.hoursToCheckC}}</span>
+                                                <span class="text-warning">D : {{ac.hoursToCheckD}}</span></p>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <p class="title text-center text-primary">Route</p>
+                                            <p class="category text-center">
+                                                <i class="material-icons text-success" *ngIf="ac.route">done</i>
+                                                <i class="material-icons text-danger" *ngIf="!ac.route">clear</i>
+                                            </p>
+                                        </div>
                                     </div>
                                 </div>
                             </tr>
-
                             </tbody>
                         </table>
                     </div>

@@ -16,6 +16,7 @@ import {FleetComponent} from './fleet/fleet.component';
 import {MarketingComponent} from './marketing/marketing.component';
 import {FlightComponent} from './flight/flight.component';
 import {StaffComponent} from './staff/staff.component';
+import {FlightDetailComponent} from './flight/detail/flight.detail.component';
 
 @NgModule({
     declarations: [
@@ -25,6 +26,7 @@ import {StaffComponent} from './staff/staff.component';
         FleetComponent,
         MarketingComponent,
         FlightComponent,
+        FlightDetailComponent,
         StaffComponent,
         UserProfileComponent,
     ],
