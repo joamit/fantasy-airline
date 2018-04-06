@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import * as Chartist from 'chartist';
+import {ManagerService} from '../shared/manager.service';
 
 @Component({
     selector: 'app-fuel',
@@ -8,7 +9,13 @@ import * as Chartist from 'chartist';
 })
 export class FuelComponent implements OnInit {
 
-    constructor() {
+    enablePurchase: boolean;
+    currentFuelPrice: number;
+    currentFuelPricePerThousandLbs: number;
+    amountToBuy: number;
+    amountToPay: number;
+
+    constructor(private managerService: ManagerService) {
     }
 
     startAnimationForLineChart(chart) {
@@ -70,5 +77,20 @@ export class FuelComponent implements OnInit {
         // start animation for the Emails Subscription Chart
         this.startAnimationForLineChart(fuelPriceChart);
 
+        this.currentFuelPrice = this.managerService.getCurrentFuelPrice();
+        this.amountToBuy = 1000;
+        this.currentFuelPricePerThousandLbs = this.currentFuelPrice * 1000;
+        this.amountToPay = this.currentFuelPrice * this.amountToBuy;
+    }
+
+    togglePurchase() {
+        this.enablePurchase = !this.enablePurchase;
+    }
+
+    purchase() {
+    }
+
+    recalculatePrice() {
+        this.amountToPay = this.amountToBuy * this.currentFuelPrice;
     }
 }

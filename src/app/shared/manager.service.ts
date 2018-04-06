@@ -198,5 +198,9 @@ export class ManagerService {
     getHelpTopics(): HelpTopic[] {
         return helpTopics;
     }
+
+    getCurrentFuelPrice(): number {
+        return 0.120;
+    }
 }
 

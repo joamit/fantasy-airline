@@ -1,22 +1,41 @@
 <div class="main-content">
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-8">
-                <div class="card">
-                    <div class="card-header card-chart" data-background-color="orange">
-                        <div class="ct-chart" id="fuelPriceChart"></div>
+            <div class="col-md-4" *ngIf="enablePurchase">
+                <div class="panel-primary">
+                    <div class="panel-heading">
+                        <h5 class="modal-title">Purchase</h5>
                     </div>
-                    <div class="card-content">
-                        <h3 class="title">Current Fuel Price</h3>
-                        <h4 class="category">$1200</h4>
-                    </div>
-                    <div class="card-footer">
-                        <div class="stats">
-                            <a class="btn btn-success" data-toggle="modal" data-target="#purchaseFuelModal">Purchase
-                                Fuel</a>
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group form-black label-floating is-empty">
+                                    <label class="control-label">Current Fuel Price : $ {{currentFuelPricePerThousandLbs}} per 1000 lbs</label>
+                                    <input type="number" disabled class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group form-black label-floating is-empty">
+                                    <label class="control-label">Amount Payable : $ {{amountToPay}}</label>
+                                    <input type="number" class="form-control" disabled>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group form-black label-floating is-empty">
+                                    <label class="control-label">Quantity</label>
+                                    <input autofocus type="number" class="form-control" [(ngModel)]="amountToBuy" (ngModelChange)="recalculatePrice()">
+                                </div>
+                            </div>
                         </div>
                     </div>
-
+                    <div class="panel-footer">
+                        <button type="button" class="btn btn-success" (click)="purchase()">Buy</button>
+                        <button type="button" class="btn btn-danger" (click)="togglePurchase()">Cancel</button>
+                    </div>
                 </div>
             </div>
             <div class="col-md-4">
@@ -35,46 +54,22 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-</div>
-<!-- TODO: This modal doesn't work in mobile layout, find a better solution for mobile users!! -->
-<div class="modal fade" id="purchaseFuelModal" tabindex="-1" role="dialog" aria-labelledby="purchaseFuelModal"
-     aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Purchase Fuel</h5>
-            </div>
-            <div class="modal-body">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="form-group form-black label-floating is-empty">
-                            <label class="control-label">Current Fuel Price $ 150 per 1000 lbs</label>
-                            <input type="number" disabled class="form-control">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header card-chart" data-background-color="orange">
+                        <div class="ct-chart" id="fuelPriceChart"></div>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="title">Current Fuel Price</h3>
+                        <h4 class="category">$ {{currentFuelPrice}}</h4>
+                    </div>
+                    <div class="card-footer">
+                        <div class="stats">
+                            <a class="btn btn-success" (click)="togglePurchase()" >Purchase
+                                Fuel</a>
                         </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="form-group form-black label-floating is-empty">
-                            <label class="control-label">Quantity</label>
-                            <input type="number" class="form-control">
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="form-group form-black label-floating is-empty">
-                            <label class="control-label">Amount $ 12312354</label>
-                            <input type="number" class="form-control" disabled>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-success">Buy</button>
-                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
             </div>
         </div>
     </div>
