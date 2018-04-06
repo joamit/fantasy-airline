@@ -2,7 +2,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-8">
-                <div class="card" >
+                <div class="card">
                     <div class="card-header card-chart" data-background-color="orange">
                         <div class="ct-chart" id="fuelPriceChart"></div>
                     </div>
@@ -12,7 +12,8 @@
                     </div>
                     <div class="card-footer">
                         <div class="stats">
-                            <a href="#" class="btn btn-success">Purchase Fuel</a>
+                            <a class="btn btn-success" data-toggle="modal" data-target="#purchaseFuelModal">Purchase
+                                Fuel</a>
                         </div>
                     </div>
 
@@ -33,6 +34,46 @@
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="purchaseFuelModal" tabindex="-1" role="dialog" aria-labelledby="purchaseFuelModal"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Purchase Fuel</h5>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group form-black label-floating is-empty">
+                            <label class="control-label">Current Fuel Price $ 150 per 1000 lbs</label>
+                            <input type="number" disabled class="form-control">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group form-black label-floating is-empty">
+                            <label class="control-label">Quantity</label>
+                            <input type="number" class="form-control">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group form-black label-floating is-empty">
+                            <label class="control-label">Amount $ 12312354</label>
+                            <input type="number" class="form-control" disabled>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-success">Buy</button>
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
             </div>
         </div>
     </div>
