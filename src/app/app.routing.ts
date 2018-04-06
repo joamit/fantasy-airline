@@ -18,7 +18,7 @@ const routes: Routes = [
     {path: 'fleet', component: FleetComponent},
     {path: 'marketing', component: MarketingComponent},
     {path: 'flight', component: FlightComponent},
-    {path: 'flight-detail', component: FlightDetailComponent},
+    {path: 'flight-detail/:id', component: FlightDetailComponent},
     {path: 'staff', component: StaffComponent},
     {path: 'user-profile', component: UserProfileComponent},
     {path: '', redirectTo: 'dashboard', pathMatch: 'full'}

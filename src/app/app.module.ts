@@ -17,6 +17,7 @@ import {MarketingComponent} from './marketing/marketing.component';
 import {FlightComponent} from './flight/flight.component';
 import {StaffComponent} from './staff/staff.component';
 import {FlightDetailComponent} from './flight/detail/flight.detail.component';
+import {ManagerService} from './shared/manager.service';
 
 @NgModule({
     declarations: [
@@ -38,7 +39,7 @@ import {FlightDetailComponent} from './flight/detail/flight.detail.component';
         RouterModule,
         AppRoutingModule
     ],
-    providers: [],
+    providers: [ ManagerService],
     bootstrap: [AppComponent]
 })
 export class AppModule {
