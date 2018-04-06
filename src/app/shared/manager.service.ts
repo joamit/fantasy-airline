@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {Aircraft, Fleet, Flight} from './domain';
+import {Aircraft, DashboardStats, Fleet, Flight, HelpTopic} from './domain';
 
 const aircrafts: Aircraft[] = [
     {
@@ -132,6 +132,50 @@ const flights: Flight[] = [
         flightNumber: 'BJ-KJ8'
     }
 ];
+const dashboardStats: DashboardStats = {
+    airlineName: 'Trans Airways',
+    companyReputation: 100,
+    fuelHolding: 145298,
+    fuelCost: 156,
+    flights: 15,
+    activeRoutes: 15,
+    aircraftsPendingDelivery: 1,
+    aircraftsPlannedForMaintenance: 3,
+    fleetSize: 15,
+    passengersServed: 54367,
+    saleValue: 77,
+    currentlyInFlight: 12,
+    currentShareValue: 2.56,
+    revenue: 54321,
+    totalAssets: 7865564,
+    totalStaffCount: 45,
+    companyStockInfo: {
+        labels: ['M', 'T', 'W', 'T', 'F', 'S', 'S'],
+        series: [
+            [12, 17, 7, 17, 23, 18, 38]
+        ]
+    },
+    percentChange: -1.25,
+    amountChange: -0.08
+};
+
+// noinspection TsLint
+const helpTopics: HelpTopic[] = [
+    {
+        id: '#ABHSDFSLDCI',
+        summary: 'Used Vs New Aircraft',
+        description: 'Used aircrafts are generally cheaper, but also older thus having a larger fuel consumption and a lower lifespan. ' +
+        'New aircrafts can be configured according to the airline requirements, have better fuel economy but are expensive. ' +
+        'When buying a used aircraft, it can be a good idea to check when it is due for a maintenance. ' +
+        'Some aircrafts are due for maintenance within a few hours of buying and can become quite expensive in long run.'
+    },
+    {
+        id: '#ALHLIDFSFDH',
+        summary: 'Test summary',
+        description: 'Test Description for the test summary to see if the collapse works!!'
+    }
+];
+
 
 @Injectable()
 export class ManagerService {
@@ -143,8 +187,16 @@ export class ManagerService {
         return flights;
     }
 
+    getDashboardStats(): DashboardStats {
+        return dashboardStats;
+    }
+
     findAircraft(id: string): Aircraft {
         return aircrafts.find(aircraft => aircraft.id === id);
+    }
+
+    getHelpTopics(): HelpTopic[] {
+        return helpTopics;
     }
 }
 

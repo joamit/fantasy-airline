@@ -78,3 +78,36 @@ interface Timeline {
     totalFlightHours: number;
     flightHoursInCompany: number;
 }
+
+export interface DashboardStats {
+    airlineName: string;
+    companyReputation: number;
+    fuelHolding: number;
+    fuelCost: number;
+    flights: number;
+    passengersServed: number;
+    fleetSize: number;
+    activeRoutes: number;
+    aircraftsPlannedForMaintenance: number;
+    saleValue: number;
+    aircraftsPendingDelivery: number;
+    totalAssets: number;
+    revenue: number;
+    currentShareValue: number;
+    currentlyInFlight: number;
+    totalStaffCount: number;
+    companyStockInfo: CompanyStockInfo;
+    percentChange: number;
+    amountChange: number;
+}
+
+interface CompanyStockInfo {
+    labels: string[];
+    series: number[][];
+}
+
+export interface HelpTopic {
+    id: string;
+    summary: string;
+    description: string;
+}

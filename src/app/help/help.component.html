@@ -1,0 +1,22 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="panel-group" id="helpTopics">
+                    <div class="panel panel-primary" *ngFor="let helpTopic of helpTopics;let i = index">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse" href="#collapse{{i+1}}" data-parent="#helpTopics">{{helpTopic.summary}}</a>
+                            </h4>
+                        </div>
+                        <div id="collapse{{i+1}}" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                <p>{{helpTopic.description}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

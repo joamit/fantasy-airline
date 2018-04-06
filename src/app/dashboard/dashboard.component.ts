@@ -1,5 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import * as Chartist from 'chartist';
+import {ManagerService} from '../shared/manager.service';
+import {DashboardStats} from '../shared/domain';
 
 @Component({
     selector: 'app-dashboard',
@@ -8,7 +10,9 @@ import * as Chartist from 'chartist';
 })
 export class DashboardComponent implements OnInit {
 
-    constructor() {
+    dashboardStats: DashboardStats;
+
+    constructor(private managerService: ManagerService) {
     }
 
     startAnimationForLineChart(chart) {
@@ -47,15 +51,10 @@ export class DashboardComponent implements OnInit {
 
     ngOnInit() {
         /* ----------==========     Daily Sales Chart initialization For Documentation    ==========---------- */
+        this.dashboardStats = this.managerService.getDashboardStats();
+        const companyStockChartData = this.dashboardStats.companyStockInfo;
 
-        const dataDailySalesChart: any = {
-            labels: ['M', 'T', 'W', 'T', 'F', 'S', 'S'],
-            series: [
-                [12, 17, 7, 17, 23, 18, 38]
-            ]
-        };
-
-        const optionsDailySalesChart: any = {
+        const companyStockChartOptions: any = {
             lineSmooth: Chartist.Interpolation.cardinal({
                 tension: 0
             }),
@@ -64,7 +63,7 @@ export class DashboardComponent implements OnInit {
             chartPadding: {top: 0, right: 0, bottom: 0, left: 0},
         };
 
-        const dailySalesChart = new Chartist.Line('#dailySalesChart', dataDailySalesChart, optionsDailySalesChart);
+        const dailySalesChart = new Chartist.Line('#dailySalesChart', companyStockChartData, companyStockChartOptions);
 
         this.startAnimationForLineChart(dailySalesChart);
     }

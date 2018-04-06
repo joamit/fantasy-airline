@@ -1,54 +1,53 @@
 <div class="main-content">
-
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-6">
                 <div class="card card-plain">
                     <div class="card-header" data-background-color="red">
-                        <h4 class="title">Airline Stats</h4>
+                        <h4 class="title">{{dashboardStats.airlineName}}</h4>
                     </div>
                     <div class="card-content table-responsive">
                         <table class="table table-hover">
                             <tbody>
                             <tr>
                                 <td>Company Reputation</td>
-                                <td>100.00%</td>
+                                <td>{{dashboardStats.companyReputation}} %</td>
                             </tr>
                             <tr>
                                 <td>Fuel Cost</td>
-                                <td>$200 per 1000 lbs</td>
+                                <td>$ {{dashboardStats.fuelCost}} per 1000 lbs</td>
                             </tr>
                             <tr>
                                 <td>Fuel Holding</td>
-                                <td>123,123,123 lbs</td>
+                                <td>{{dashboardStats.fuelHolding}} lbs</td>
                             </tr>
                             <tr>
                                 <td>Flights</td>
-                                <td>82</td>
+                                <td>{{dashboardStats.flights}}</td>
                             </tr>
                             <tr>
                                 <td>Passengers Served</td>
-                                <td>678,876</td>
+                                <td>{{dashboardStats.passengersServed}}</td>
                             </tr>
                             <tr>
                                 <td>Fleet Size</td>
-                                <td>12</td>
+                                <td>{{dashboardStats.fleetSize}}</td>
                             </tr>
                             <tr>
                                 <td>Active Routes</td>
-                                <td>12</td>
+                                <td>{{dashboardStats.activeRoutes}}</td>
                             </tr>
                             <tr>
                                 <td>A/C planned for Maintenance</td>
-                                <td>1</td>
+                                <td>{{dashboardStats.aircraftsPlannedForMaintenance}}</td>
                             </tr>
                             <tr>
                                 <td>Sale Value</td>
-                                <td>88.87%</td>
+                                <td>{{dashboardStats.saleValue}} %</td>
                             </tr>
                             <tr>
                                 <td>A/C pending delivery</td>
-                                <td>12</td>
+                                <td>{{dashboardStats.aircraftsPendingDelivery}}</td>
                             </tr>
                             </tbody>
                         </table>
@@ -64,7 +63,7 @@
                             </div>
                             <div class="card-content">
                                 <p class="category">Assets</p>
-                                <h3 class="title">$124,456,345
+                                <h3 class="title">$ {{dashboardStats.totalAssets}}
                                 </h3>
                             </div>
                             <div class="card-footer">
@@ -81,7 +80,7 @@
                             </div>
                             <div class="card-content">
                                 <p class="category">Revenue</p>
-                                <h3 class="title">$34,245</h3>
+                                <h3 class="title">$ {{dashboardStats.revenue}}</h3>
                             </div>
                             <div class="card-footer">
                                 <div class="stats">
@@ -95,11 +94,11 @@
                     <div class="col-lg-6 col-md-12 col-sm-12">
                         <div class="card card-stats">
                             <div class="card-header" data-background-color="blue">
-                                <i class="material-icons">account_balance_wallet</i>
+                                <i class="material-icons">face</i>
                             </div>
                             <div class="card-content">
-                                <p class="category">Current Share Value</p>
-                                <h3 class="title">$678.98</h3>
+                                <p class="category">Staff</p>
+                                <h3 class="title">{{dashboardStats.totalStaffCount}}</h3>
                             </div>
                             <div class="card-footer">
                                 <div class="stats">
@@ -111,11 +110,11 @@
                     <div class="col-lg-6 col-md-12 col-sm-12">
                         <div class="card card-stats">
                             <div class="card-header" data-background-color="red">
-                                <i class="material-icons">info_outline</i>
+                                <i class="material-icons">flight_takeoff</i>
                             </div>
                             <div class="card-content">
-                                <p class="category">Currently in Flight</p>
-                                <h3 class="title">75</h3>
+                                <p class="category">In Flight</p>
+                                <h3 class="title">{{dashboardStats.currentlyInFlight}}</h3>
                             </div>
                             <div class="card-footer">
                                 <div class="stats">
@@ -128,12 +127,12 @@
                 <div class="row">
                     <div class="col-lg-6 col-md-12 col-sm-12">
                         <div class="card card-stats">
-                            <div class="card-header" data-background-color="blue">
+                            <div class="card-header" data-background-color="magenta">
                                 <i class="material-icons">account_balance_wallet</i>
                             </div>
                             <div class="card-content">
-                                <p class="category">Current Share Value</p>
-                                <h3 class="title">$678.98</h3>
+                                <p class="category">Share Value</p>
+                                <h3 class="title">$ {{dashboardStats.currentShareValue}}</h3>
                             </div>
                             <div class="card-footer">
                                 <div class="stats">
@@ -145,7 +144,6 @@
                 </div>
             </div>
         </div>
-
         <div class="row">
             <div class="col-md-6">
                 <div class="card">
@@ -155,9 +153,9 @@
                     <div class="card-content">
                         <h4 class="title">Company Stock Info</h4>
                         <p class="category"><span class="text-success"><i
-                                class="fa fa-long-arrow-up"></i> +2.67%  </span> change</p>
+                                [class]="dashboardStats.percentChange > 0 ? 'fa fa-arrow-up' : 'fa fa-arrow-down'"></i> {{dashboardStats.percentChange}} %  </span> change</p>
                         <p class="category"><span class="text-success"><i
-                                class="fa fa-long-arrow-up"></i> +$0.067  </span> change</p>
+                                [class]="dashboardStats.amountChange > 0 ? 'fa fa-arrow-up' : 'fa fa-arrow-down'"></i> {{dashboardStats.amountChange}} $ </span> change</p>
                     </div>
                     <div class="card-footer">
                         <div class="stats">
@@ -166,7 +164,6 @@
                     </div>
                 </div>
             </div>
-
             <div class="col-md-6">
                 <div id="map"></div>
             </div>
