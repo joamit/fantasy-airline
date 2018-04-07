@@ -2,15 +2,13 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-12">
-                <div class="btn-toolbar pull-right" role="group" aria-label="Basic example">
-                    <button type="button" [routerLink]="['/plan-maintenance']" class="btn btn-sm btn-success"><i class="fa fa-plus"></i> Plan New</button>
-                </div>
+                <a class="text-success pull-right" [routerLink]="['/plan-maintenance']"><i class="fa fa-2x fa-plus-circle"></i></a>
             </div>
         </div>
         <div class="row">
-            <div class="col-md-12">
-                <div class="card" *ngFor="let maintenance of maintenanceList">
-                    <div class="card-header" [style.background-color]="maintenance.completed(maintenance.checkFinished)? 'green' : 'red'">
+            <div class="col-lg-6 col-md-12 col-sm-12" *ngFor="let maintenance of maintenanceList">
+                <div class="card">
+                    <div class="card-header" [style.background-color]="maintenance.completed(maintenance.checkFinished)? 'green' : 'orange'">
                         <h4 class="title">{{maintenance.aircraft.name}} <i class="fa fa-check-circle" *ngIf="maintenance.completed(maintenance.checkFinished)"></i> <i *ngIf="!maintenance.completed(maintenance.checkFinished)" class="fa fa-cog fa-spin fa-fw"></i></h4>
                     </div>
                     <div class="card-content">
@@ -22,6 +20,14 @@
                             <li class="list-group-item">End<span class="badge progress-bar-success">{{maintenance.checkFinished | date : 'dd-MMM-yyyy hh:MM:ss'}}</span></li>
                         </ul>
                     </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12" *ngIf="maintenanceList.length == 0">
+                <div class="jumbotron">
+                    <h1>No maintenance scheduled!</h1>
+                    <a class="text-success" [routerLink]="['/plan-maintenance']"><i class="fa fa-plus-circle"></i> Plan new maintenance...</a>
                 </div>
             </div>
         </div>

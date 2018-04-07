@@ -2,43 +2,26 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-12">
-                <div class="card card-plain">
-                    <div class="card-header" data-background-color="red">
-                        <h5>
-                            <span>Campaigns</span>
-                            <a class='pull-right' href="#dummy"><i class="fa fa-2x fa-plus-circle"></i> </a>
-                        </h5>
+                <a class="text-success pull-right" (click)="addNewCampaign()"><i class="fa fa-2x fa-plus-circle"></i></a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6 col-md-12 col-sm-12" *ngFor="let campaign of campaigns">
+                <div class="card">
+                    <div class="card-header" data-background-color="green">
+                        <h5 class="title">{{campaign.campaignName}}</h5>
+                        <p class="category">${{campaign.campaignAmount}}</p>
                     </div>
-                    <div class="card-content table-responsive">
-                        <table class="table table-hover table-bordered table-striped">
-                            <tbody>
-                            <tr *ngFor="let campaign of campaigns">
-                                <div class="row">
-                                    <div class="col-md-6 text-warning">
-                                        <h5 class="title text-center font-weight-bold">{{campaign.campaignName}}</h5>
-                                    </div>
-                                    <div class="col-md-6 text-primary">
-                                        <h5 class="title text-center">${{campaign.campaignAmount}}</h5>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-4">
-                                        <p class="text-center text-primary">Efficiency</p>
-                                        <p class="category text-center">{{campaign.campaignEfficiency}}%</p>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <p class="text-center text-success">Reach</p>
-                                        <p class="category text-center">{{campaign.campaignReach}}</p>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <p class="text-center text-danger">Ends In</p>
-                                        <p class="category text-center">{{campaign.endTime | date : 'medium'}}</p>
-                                    </div>
-                                </div>
-                            </tr>
-
-                            </tbody>
-                        </table>
+                    <div class="card-content">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <ul class="category list-group list-group-flush text-left">
+                                    <li class="list-group-item">Efficiency<span class="badge progress-bar-primary">{{campaign.campaignEfficiency}} %</span></li>
+                                    <li class="list-group-item">Reach<span class="badge progress-bar-warning">{{campaign.campaignReach}}</span></li>
+                                    <li class="list-group-item">Ends In<span class="badge progress-bar-danger">{{campaign.endTime | date : 'medium'}}</span></li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -48,4 +48,7 @@ export class MarketingComponent implements OnInit {
 
     ngOnInit() {
     }
+
+    addNewCampaign() {
+    }
 }
