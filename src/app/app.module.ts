@@ -19,6 +19,10 @@ import {StaffComponent} from './staff/staff.component';
 import {FlightDetailComponent} from './flight/detail/flight.detail.component';
 import {ManagerService} from './shared/manager.service';
 import {HelpComponent} from './help/help.component';
+import {MaintenanceService} from './shared/maintenance.service';
+import {MaintenanceComponent} from './maintenance/maintenance.component';
+import {PlanMaintenanceComponent} from './maintenance/plan/plan.maintenance.component';
+import {PlanMaintenanceDetailsComponent} from './maintenance/plan/details/plan.maintenance.details.component';
 
 @NgModule({
     declarations: [
@@ -29,6 +33,9 @@ import {HelpComponent} from './help/help.component';
         MarketingComponent,
         FlightComponent,
         FlightDetailComponent,
+        MaintenanceComponent,
+        PlanMaintenanceComponent,
+        PlanMaintenanceDetailsComponent,
         StaffComponent,
         UserProfileComponent,
         HelpComponent,
@@ -41,7 +48,10 @@ import {HelpComponent} from './help/help.component';
         RouterModule,
         AppRoutingModule
     ],
-    providers: [ ManagerService ],
+    providers: [
+        ManagerService,
+        MaintenanceService
+    ],
     bootstrap: [AppComponent]
 })
 export class AppModule {

@@ -1,0 +1,5 @@
+.table > tbody > tr > td {
+    padding: 7px !important;
+    margin: 5px !important;
+    border-radius: 5px !important;
+}

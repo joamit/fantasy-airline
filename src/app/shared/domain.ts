@@ -30,6 +30,23 @@ export interface Aircraft {
     optional: Optional;
     speed: Speed;
     timeline: Timeline;
+    maintenance: Maintenance;
+}
+
+export interface Maintenance {
+    aircraftId: string;
+    A: CheckDetail;
+    B: CheckDetail;
+    C: CheckDetail;
+    D: CheckDetail;
+    needsMaintenance: boolean;
+    flightHours: number;
+}
+
+interface CheckDetail {
+    hours: number;
+    duration: number;
+    cost: number;
 }
 
 interface Dimension {
@@ -110,4 +127,20 @@ export interface HelpTopic {
     id: string;
     summary: string;
     description: string;
+}
+
+export interface ScheduledMaintenance {
+    aircraft: Aircraft;
+    aircraftId: string;
+    typeACheck: boolean;
+    typeBCheck: boolean;
+    typeCCheck: boolean;
+    typeDCheck: boolean;
+    checkDuration: number;
+    checkStartsIn: number;
+    checkIssued: Date;
+    checkStarted: Date;
+    checkFinished: Date;
+    checkCost: number;
+    completed: any;
 }

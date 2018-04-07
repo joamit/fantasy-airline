@@ -12,6 +12,10 @@ import {FlightComponent} from './flight/flight.component';
 import {StaffComponent} from './staff/staff.component';
 import {FlightDetailComponent} from './flight/detail/flight.detail.component';
 import {HelpComponent} from './help/help.component';
+import {MaintenanceComponent} from './maintenance/maintenance.component';
+import {PlanMaintenanceComponent} from './maintenance/plan/plan.maintenance.component';
+import {PlanMaintenanceDetailsComponent} from './maintenance/plan/details/plan.maintenance.details.component';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 const routes: Routes = [
     {path: 'dashboard', component: DashboardComponent},
@@ -20,6 +24,9 @@ const routes: Routes = [
     {path: 'marketing', component: MarketingComponent},
     {path: 'flight', component: FlightComponent},
     {path: 'flight-detail/:id', component: FlightDetailComponent},
+    {path: 'maintenance', component: MaintenanceComponent},
+    {path: 'plan-maintenance', component: PlanMaintenanceComponent},
+    {path: 'plan-maintenance-details/:id', component: PlanMaintenanceDetailsComponent},
     {path: 'staff', component: StaffComponent},
     {path: 'user-profile', component: UserProfileComponent},
     {path: 'help', component: HelpComponent},
@@ -30,6 +37,7 @@ const routes: Routes = [
     imports: [
         CommonModule,
         BrowserModule,
+        BrowserAnimationsModule,
         RouterModule.forRoot(routes)
     ],
     exports: [],

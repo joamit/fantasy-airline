@@ -46,6 +46,31 @@ const aircrafts: Aircraft[] = [
             introduced: new Date(),
             flightHoursInCompany: 12,
             totalFlightHours: 345
+        },
+        maintenance: {
+            aircraftId: 'BBSDR1235SD',
+            A: {
+                hours: 84,
+                duration: 3,
+                cost: 3498
+            },
+            B: {
+                hours: 167,
+                duration: 7,
+                cost: 9498
+            },
+            C: {
+                hours: 987,
+                duration: 13,
+                cost: 42768
+            },
+            D: {
+                hours: 1756,
+                duration: 39,
+                cost: 98745
+            },
+            needsMaintenance: false,
+            flightHours: 85
         }
     }
 ];
@@ -193,6 +218,10 @@ export class ManagerService {
 
     findAircraft(id: string): Aircraft {
         return aircrafts.find(aircraft => aircraft.id === id);
+    }
+
+    getAircrafts(): Aircraft[] {
+        return aircrafts;
     }
 
     getHelpTopics(): HelpTopic[] {

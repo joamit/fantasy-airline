@@ -1,0 +1,94 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header" data-background-color="blue">
+                        <h4 class="title">Maintenance Check for {{aircraft.name}}</h4>
+                    </div>
+                    <div class="card-content">
+                        <div class="row">
+                            <div class="col-md-12 table-responsive">
+                                <table class="table table-hover table-bordered text-center">
+                                    <tbody>
+                                    <tr>
+                                        <td style="color: white;" [style.background-color]="activateACheck? '#999999' : '#9c27b0'">
+                                            <p class="title">A</p>
+                                        </td>
+                                        <td style="color: white;" [style.background-color]="activateBCheck? '#999999' : '#4caf50'">
+                                            <p class="title">B</p>
+                                        </td>
+                                        <td style="color: white;" [style.background-color]="activateCCheck? '#999999' : '#ff9800'">
+                                            <p class="title">C</p>
+                                        </td>
+                                        <td style="color: white;" [style.background-color]="activateCCheck? '#999999' : '#468499'">
+                                            <p class="title">D</p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="4" style="background-color: #999999; color: white;">
+                                            <p class="title" *ngIf="activateDCheck">D-Check</p>
+                                            <p class="title" *ngIf="activateCCheck">C-Check</p>
+                                            <p class="title" *ngIf="activateBCheck">B-Check</p>
+                                            <p class="title" *ngIf="activateACheck">A-Check</p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="color: white;" [style.background-color]="activateACheck? '#999999' : '#9c27b0'">
+                                            <p class="title">{{aircraft.maintenance.A.hours}}</p>
+                                        </td>
+                                        <td style="color: white;" [style.background-color]="activateBCheck? '#999999' : '#4caf50'">
+                                            <p class="title">{{aircraft.maintenance.B.hours}}</p>
+                                        </td>
+                                        <td style="color: white;" [style.background-color]="activateCCheck? '#999999' : '#ff9800'">
+                                            <p class="title">{{aircraft.maintenance.C.hours}}</p>
+                                        </td>
+                                        <td style="color: white;" [style.background-color]="activateCCheck? '#999999' : '#468499'">
+                                            <p class="title">{{aircraft.maintenance.D.hours}}</p>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-header" data-background-color="green">
+                        <h4 class="title">Details</h4>
+                    </div>
+                    <div class="card-content">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <ul class="category list-group list-group-flush text-left">
+                                    <li class="list-group-item">Check Start In <span class="badge progress-bar-default"> 02 Hours</span></li>
+                                    <li class="list-group-item">Check Duration<span class="badge progress-bar-success"> {{checkDuration}} Hours</span></li>
+                                    <li class="list-group-item">Check Cost<span class="badge progress-bar-warning"> $ {{checkCost}}</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <button class="btn btn-danger" style="width: auto;" (click)="planMaintenance()"><i class="fa fa-plus"></i> Plan Maintenance</button>
+            </div>
+        </div>
+
+        <hr/>
+        <div class="row">
+            <div class="col-md-12">
+                <ul>
+                    <li>A-Checks should be performed every 500 flight hours.</li>
+                    <li>B-Checks should be performed every 1000 flight hours. These also cover A-Checks</li>
+                    <li>C-Checks should be performed every 2000 flight hours. These also cover both B-Checks and A-Checks</li>
+                    <li>D-Checks should be performed every 10,000 flight hours. These also cover all other checks as well.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

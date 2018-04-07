@@ -1,0 +1,29 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="btn-toolbar pull-right" role="group" aria-label="Basic example">
+                    <button type="button" [routerLink]="['/plan-maintenance']" class="btn btn-sm btn-success"><i class="fa fa-plus"></i> Plan New</button>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card" *ngFor="let maintenance of maintenanceList">
+                    <div class="card-header" [style.background-color]="maintenance.completed(maintenance.checkFinished)? 'green' : 'red'">
+                        <h4 class="title">{{maintenance.aircraft.name}} <i class="fa fa-check-circle" *ngIf="maintenance.completed(maintenance.checkFinished)"></i> <i *ngIf="!maintenance.completed(maintenance.checkFinished)" class="fa fa-cog fa-spin fa-fw"></i></h4>
+                    </div>
+                    <div class="card-content">
+                        <ul class="category list-group list-group-flush text-left">
+                            <li class="list-group-item">Check Cost<span class="badge progress-bar-danger">$ {{maintenance.checkCost}}</span></li>
+                            <li class="list-group-item">Check Duration<span class="badge progress-bar-warning">{{maintenance.checkDuration}} Hours</span></li>
+                            <li class="list-group-item">Issued<span class="badge progress-bar-success">{{maintenance.checkIssued | date : 'dd-MMM-yyyy hh:MM:ss'}}</span></li>
+                            <li class="list-group-item">Start<span class="badge progress-bar-success">{{maintenance.checkStarted | date : 'dd-MMM-yyyy hh:MM:ss'}}</span></li>
+                            <li class="list-group-item">End<span class="badge progress-bar-success">{{maintenance.checkFinished | date : 'dd-MMM-yyyy hh:MM:ss'}}</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
