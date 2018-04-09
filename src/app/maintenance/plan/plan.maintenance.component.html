@@ -1,7 +1,7 @@
 <div class="main-content">
     <div class="container-fluid">
         <div class="row">
-            <div class="col-lg-6 col-md-12 col-sm-12 table-responsive" *ngFor="let aircraft of aircrafts">
+            <div class="col-lg-3 col-md-12 col-sm-12 table-responsive" *ngFor="let aircraft of aircrafts">
                 <div class="card" [routerLink]="['/plan-maintenance-details', aircraft.id]">
                     <div class="card-header" data-background-color="green">
                         <h5 class="title">{{aircraft.registrationNumber}}</h5>

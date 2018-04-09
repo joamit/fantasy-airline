@@ -78,7 +78,6 @@ export class FuelComponent implements OnInit {
         this.startAnimationForLineChart(fuelPriceChart);
 
         this.currentFuelPrice = this.managerService.getCurrentFuelPrice();
-        this.amountToBuy = 1000;
         this.currentFuelPricePerThousandLbs = this.currentFuelPrice * 1000;
         this.amountToPay = this.currentFuelPrice * this.amountToBuy;
     }

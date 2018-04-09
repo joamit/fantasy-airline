@@ -16,12 +16,16 @@ import {MaintenanceComponent} from './maintenance/maintenance.component';
 import {PlanMaintenanceComponent} from './maintenance/plan/plan.maintenance.component';
 import {PlanMaintenanceDetailsComponent} from './maintenance/plan/details/plan.maintenance.details.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MarketComponent} from './market/market.component';
+import {AircraftDetailComponent} from './market/detail/aircraft.detail.component';
 
 const routes: Routes = [
     {path: 'dashboard', component: DashboardComponent},
     {path: 'fuel', component: FuelComponent},
     {path: 'fleet', component: FleetComponent},
     {path: 'marketing', component: MarketingComponent},
+    {path: 'market', component: MarketComponent},
+    {path: 'aircraft-detail', component: AircraftDetailComponent},
     {path: 'flight', component: FlightComponent},
     {path: 'flight-detail/:id', component: FlightDetailComponent},
     {path: 'maintenance', component: MaintenanceComponent},

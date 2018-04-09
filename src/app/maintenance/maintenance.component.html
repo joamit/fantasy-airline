@@ -6,18 +6,36 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-lg-6 col-md-12 col-sm-12" *ngFor="let maintenance of maintenanceList">
+            <div class="col-lg-3 col-md-12 col-sm-12" *ngFor="let maintenance of maintenanceList">
                 <div class="card">
                     <div class="card-header" [style.background-color]="maintenance.completed(maintenance.checkFinished)? 'green' : 'orange'">
-                        <h4 class="title">{{maintenance.aircraft.name}} <i class="fa fa-check-circle" *ngIf="maintenance.completed(maintenance.checkFinished)"></i> <i *ngIf="!maintenance.completed(maintenance.checkFinished)" class="fa fa-cog fa-spin fa-fw"></i></h4>
+                        <h4 class="title">{{maintenance.aircraft.name}} <i class="fa fa-check-circle pull-right" *ngIf="maintenance.completed(maintenance.checkFinished)"></i> <i *ngIf="!maintenance.completed(maintenance.checkFinished)" class="fa fa-cog fa-spin fa-fw pull-right"></i></h4>
                     </div>
                     <div class="card-content">
                         <ul class="category list-group list-group-flush text-left">
-                            <li class="list-group-item">Check Cost<span class="badge progress-bar-danger">$ {{maintenance.checkCost}}</span></li>
-                            <li class="list-group-item">Check Duration<span class="badge progress-bar-warning">{{maintenance.checkDuration}} Hours</span></li>
-                            <li class="list-group-item">Issued<span class="badge progress-bar-success">{{maintenance.checkIssued | date : 'dd-MMM-yyyy hh:MM:ss'}}</span></li>
-                            <li class="list-group-item">Start<span class="badge progress-bar-success">{{maintenance.checkStarted | date : 'dd-MMM-yyyy hh:MM:ss'}}</span></li>
-                            <li class="list-group-item">End<span class="badge progress-bar-success">{{maintenance.checkFinished | date : 'dd-MMM-yyyy hh:MM:ss'}}</span></li>
+                            <li class="list-group-item">Cost<span class="badge progress-bar-danger">$ {{maintenance.checkCost}}</span></li>
+                            <li class="list-group-item">Duration<span class="badge progress-bar-warning">{{maintenance.checkDuration}} Hours</span></li>
+                            <li class="list-group-item">Issued
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <span class="title text-success">{{maintenance.checkIssued | date : 'dd-MMM-yyyy hh:MM:ss'}}</span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="list-group-item">Start
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <span class="title text-success">{{maintenance.checkStarted | date : 'dd-MMM-yyyy hh:MM:ss'}}</span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="list-group-item">End
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <span class="title text-success">{{maintenance.checkFinished | date : 'dd-MMM-yyyy hh:MM:ss'}}</span>
+                                    </div>
+                                </div>
+                            </li>
                         </ul>
                     </div>
                 </div>

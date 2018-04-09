@@ -23,6 +23,8 @@ import {MaintenanceService} from './shared/maintenance.service';
 import {MaintenanceComponent} from './maintenance/maintenance.component';
 import {PlanMaintenanceComponent} from './maintenance/plan/plan.maintenance.component';
 import {PlanMaintenanceDetailsComponent} from './maintenance/plan/details/plan.maintenance.details.component';
+import {MarketComponent} from './market/market.component';
+import {AircraftDetailComponent} from './market/detail/aircraft.detail.component';
 
 @NgModule({
     declarations: [
@@ -31,6 +33,8 @@ import {PlanMaintenanceDetailsComponent} from './maintenance/plan/details/plan.m
         FuelComponent,
         FleetComponent,
         MarketingComponent,
+        MarketComponent,
+        AircraftDetailComponent,
         FlightComponent,
         FlightDetailComponent,
         MaintenanceComponent,

@@ -1,10 +1,10 @@
 <div class="main-content">
     <div class="container-fluid">
         <div class="row">
-            <div class="col-lg-6 col-md-12 col-sm-12" *ngFor="let ac of fleet">
-                <div class="card" [routerLink]="['/flight-detail', ac.aircraftId]">
-                    <div class="card-header" data-background-color="green">
-                        <h5 class="category text-center">
+            <div class="col-lg-3 col-md-12 col-sm-12" *ngFor="let ac of fleet">
+                <div class="card" [routerLink]="['/flight-detail', ac.aircraftId]" style="cursor: pointer;">
+                    <div class="card-header" style="background-color: white">
+                        <h5 class="title text-center" style="color: black">
                             <img class="text-center" src="{{ac.logo}}" height="32" width="32"/>&nbsp;{{ac.aircraftDesignation}}
                         </h5>
                     </div>
@@ -15,13 +15,18 @@
                                     <li class="list-group-item">Aircraft
                                         <span class="badge progress-bar-warning">{{ac.aircraftName}}</span>
                                     </li>
-                                    <li class="list-group-item">Hours to Maintenance
-                                        <span class="pull-right">
-                                            <span class="text-info" style="margin-right: 10px;">A : {{ac.hoursToCheckA}}</span>
-                                            <span class="text-primary" style="margin-right: 10px;">B : {{ac.hoursToCheckB}}</span>
-                                            <span class="text-success" style="margin-right: 10px;">C : {{ac.hoursToCheckC}}</span>
-                                            <span class="text-warning">D : {{ac.hoursToCheckD}}</span>
-                                        </span>
+                                    <li class="list-group-item">
+                                        <p>Hours to Maintenance</p>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="col-md-6 col-sm-6"><span class="text-info">{{ac.hoursToCheckA}}</span></div>
+                                                <div class="col-md-6 col-sm-6"><span class="text-primary">{{ac.hoursToCheckB}}</span></div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="col-md-6 col-sm-6"><span class="text-success">{{ac.hoursToCheckC}}</span></div>
+                                                <div class="col-md-6 col-sm-6"><span class="text-warning">{{ac.hoursToCheckD}}</span></div>
+                                            </div>
+                                        </div>
                                     </li>
                                     <li class="list-group-item">Route
                                         <span class="pull-right">

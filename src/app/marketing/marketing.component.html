@@ -6,19 +6,25 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-lg-6 col-md-12 col-sm-12" *ngFor="let campaign of campaigns">
+            <div class="col-lg-3 col-md-12 col-sm-12" *ngFor="let campaign of campaigns">
                 <div class="card">
-                    <div class="card-header" data-background-color="green">
-                        <h5 class="title">{{campaign.campaignName}}</h5>
-                        <p class="category">${{campaign.campaignAmount}}</p>
+                    <div class="card-header" style="background-color: white;">
+                        <h5 class="title" style="color: black;">{{campaign.campaignName}}</h5>
                     </div>
                     <div class="card-content">
                         <div class="row">
                             <div class="col-md-12">
                                 <ul class="category list-group list-group-flush text-left">
+                                    <li class="list-group-item">Amount<span class="badge progress-bar-success">${{campaign.campaignAmount}}</span> </li>
                                     <li class="list-group-item">Efficiency<span class="badge progress-bar-primary">{{campaign.campaignEfficiency}} %</span></li>
                                     <li class="list-group-item">Reach<span class="badge progress-bar-warning">{{campaign.campaignReach}}</span></li>
-                                    <li class="list-group-item">Ends In<span class="badge progress-bar-danger">{{campaign.endTime | date : 'medium'}}</span></li>
+                                    <li class="list-group-item">Ends In
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <span class="title text-danger">{{campaign.endTime | date : 'medium'}}</span>
+                                            </div>
+                                        </div>
+                                    </li>
                                 </ul>
                             </div>
                         </div>

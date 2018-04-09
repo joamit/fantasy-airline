@@ -18,7 +18,7 @@ export class MarketingComponent implements OnInit {
 
     campaigns: Campaign[] = [
         {
-            campaignName: 'Airline Publicity Campaign',
+            campaignName: 'Airline Publicity',
             campaignType: 'Publicity Campaign',
             campaignEfficiency: 100,
             campaignReach: 'International',
@@ -26,7 +26,7 @@ export class MarketingComponent implements OnInit {
             endTime: new Date()
         },
         {
-            campaignName: 'Route Publicity Campaign',
+            campaignName: 'Route Publicity',
             campaignType: 'Route Awareness Campaign',
             campaignEfficiency: 80,
             campaignReach: 'National',
@@ -34,7 +34,7 @@ export class MarketingComponent implements OnInit {
             endTime: new Date()
         },
         {
-            campaignName: 'Aircraft Publicity Campaign',
+            campaignName: 'Aircraft Publicity',
             campaignType: 'Publicity Campaign',
             campaignEfficiency: 91,
             campaignReach: 'International',

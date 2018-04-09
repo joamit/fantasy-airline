@@ -13,6 +13,7 @@ export const ROUTES: RouteInfo[] = [
     {path: 'dashboard', title: 'Overview', icon: 'dashboard', class: ''},
     {path: 'fuel', title: 'Fuel', icon: 'opacity', class: ''},
     {path: 'fleet', title: 'Fleet', icon: 'airplanemode_active', class: ''},
+    {path: 'market', title: 'Market', icon: 'add_shopping_cart', class: ''},
     {path: 'marketing', title: 'Marketing', icon: 'store_mall_directory', class: ''},
     {path: 'flight', title: 'Flights', icon: 'flight_takeoff', class: ''},
     {path: 'maintenance', title: 'Maintenance', icon: 'build', class: ''},
