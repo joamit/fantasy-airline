@@ -25,6 +25,7 @@ import {PlanMaintenanceComponent} from './maintenance/plan/plan.maintenance.comp
 import {PlanMaintenanceDetailsComponent} from './maintenance/plan/details/plan.maintenance.details.component';
 import {MarketComponent} from './market/market.component';
 import {AircraftDetailComponent} from './market/detail/aircraft.detail.component';
+import {MarketService} from './shared/market.service';
 
 @NgModule({
     declarations: [
@@ -54,7 +55,8 @@ import {AircraftDetailComponent} from './market/detail/aircraft.detail.component
     ],
     providers: [
         ManagerService,
-        MaintenanceService
+        MaintenanceService,
+        MarketService
     ],
     bootstrap: [AppComponent]
 })

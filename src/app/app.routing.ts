@@ -25,7 +25,7 @@ const routes: Routes = [
     {path: 'fleet', component: FleetComponent},
     {path: 'marketing', component: MarketingComponent},
     {path: 'market', component: MarketComponent},
-    {path: 'aircraft-detail', component: AircraftDetailComponent},
+    {path: 'aircraft-detail/:id', component: AircraftDetailComponent},
     {path: 'flight', component: FlightComponent},
     {path: 'flight-detail/:id', component: FlightDetailComponent},
     {path: 'maintenance', component: MaintenanceComponent},

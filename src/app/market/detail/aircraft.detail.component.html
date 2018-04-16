@@ -1,15 +1,72 @@
 <div class="main-content">
     <div class="container-fluid">
         <div class="row">
-            <div class="col-lg-4 col-md-12 col-sm-12 text-center">
-                <div class="card card-stats">
-                    <div class="card-body text-center">
-                        <img src="../../../assets/img/aircrafts/antonov-an26.png" class="img-responsive img-rounded" />
+            <div class="col-md-12">
+                <h5>
+                    <span>{{aircraft.name}}</span>
+                    <a class='pull-right' href="#dummy" style="margin-left: 5px;"><i class="fa fa-dollar-sign"></i> </a>
+                    <a class='pull-right' href="#dummy" style="margin-right: 15px; margin-left: 5px;"><i class="fa fa-map-marker"></i> </a>
+                    <a class='pull-right' href="#dummy" style="margin-right: 15px; margin-left: 5px;"><i class="fa fa-cogs"></i> </a>
+                    <a class='pull-right' href="#dummy" style="margin-right: 15px;"><i class="fa fa-list-ul"></i> </a>
+                    <a class='pull-left' href="#dummy" style="margin-right: 15px;"><i class="fa fa-arrow-circle-left"></i> </a>
+                </h5>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6 col-md-12 col-sm-12">
+
+                <div class="row" style="border-radius: 5px; background-color: #f2f2f2; padding-left: 5px; padding-right: 5px; margin-bottom: 10px;">
+                    <div class="col-sm-12 text-center">
+                        <div class="category text-center">
+                            <span class="pull-left">{{aircraft.route.origin}}</span>
+                            <span>{{aircraft.route.duration}}</span>
+                            <span class="pull-right">{{aircraft.route.destination}}</span></div>
+                        <hr style="margin-top: 10px; margin-bottom: 10px;"/>
+                        <div class="category text-center">
+                            <span class="pull-left">{{aircraft.route.originCountry}}, {{aircraft.route.originCode}}</span>
+                            <span>{{aircraft.route.type}}</span>
+                            <span class="pull-right">{{aircraft.route.destinationCountry}}, {{aircraft.route.destinationCode}}</span>
+                        </div>
                     </div>
                 </div>
+                <ul class="category list-group list-group-flush text-left">
+                    <li class="list-group-item">Flight#<span class="badge progress-bar-secondary">{{aircraft.name}}</span></li>
+                    <li class="list-group-item">Route Distance<span class="badge progress-bar-danger">{{aircraft.route.distance}} Km</span></li>
+                    <li class="list-group-item">Flight Time<span class="badge progress-bar-success">{{aircraft.route.duration}}</span></li>
+                    <li class="list-group-item">Overall Demand<span class="badge progress-bar-warning">{{aircraft.route.demand}} %</span></li>
+                </ul>
+                <ul class="category list-group list-group-flush text-left">
+                    <li class="list-group-item">Cruise Speed<span class="badge progress-bar-danger">{{aircraft.speed.cruiseSpeed}} Kph</span></li>
+                    <li class="list-group-item">Operating Range<span class="badge progress-bar-warning">{{aircraft.speed.operatingDistance}} Km</span></li>
+                    <li class="list-group-item">Fuel Consumption<span class="badge progress-bar-success">{{aircraft.speed.fuelConsumption}} Lbs/Km</span></li>
+                    <li class="list-group-item">Turnover time<span class="badge progress-bar-primary">{{aircraft.speed.turnoverTime}} minutes</span></li>
+                </ul>
             </div>
-            <div class="col-lg-4 col-md-12 col-sm-12">
-
+            <div class="col-lg-6 col-md-12 col-sm-12">
+                <ul class="category list-group list-group-flush text-left">
+                    <li class="list-group-item">Length<span class="badge progress-bar-success">{{aircraft.dimension.length}} meter</span></li>
+                    <li class="list-group-item">Wingspan<span class="badge progress-bar-warning">{{aircraft.dimension.wingspan}} meter</span></li>
+                    <li class="list-group-item">Min. runway requirement<span class="badge progress-bar-danger">{{aircraft.dimension.runwayRequirement}} ft.</span></li>
+                </ul>
+                <ul class="category list-group list-group-flush text-left">
+                    <li class="list-group-item">Registration Number<span class="badge badge-secondary">{{aircraft.registrationNumber}}</span></li>
+                    <li class="list-group-item">Aircraft Quality<span class="badge progress-bar-warning">{{aircraft.optional.aircraftQuality}}</span></li>
+                    <li class="list-group-item">Seat Layout
+                        <span class="badge badge-success">
+                                                <span class="text-success" style="margin-left: 5px; margin-right: 5px;">{{aircraft.optional.seatLayout.E}} E </span>
+                                                <span class="text-primary" style="margin-left: 5px; margin-right: 5px;">{{aircraft.optional.seatLayout.F}} F</span>
+                                                <span class="text-danger" style="margin-left: 5px; margin-right: 5px;">{{aircraft.optional.seatLayout.B}} B</span>
+                                            </span>
+                    </li>
+                    <li class="list-group-item">Aircraft Value<span class="badge progress-bar-success">$ {{aircraft.optional.aircraftValue}}</span></li>
+                    <li class="list-group-item">Engine<span class="badge progress-bar-danger">{{aircraft.optional.engine}}</span></li>
+                </ul>
+                <ul class="category list-group list-group-flush text-left">
+                    <li class="list-group-item">Introduced<span class="badge progress-bar-primary">{{aircraft.timeline.introduced | date : 'yyyy'}}</span></li>
+                    <li class="list-group-item">Delivered<span class="badge progress-bar-success">{{aircraft.timeline.delivered | date: 'yyyy'}}</span></li>
+                    <li class="list-group-item">Flight Hours<span class="badge progress-bar-danger">{{aircraft.timeline.totalFlightHours}}</span></li>
+                    <li class="list-group-item">Flight Hours in Company<span class="badge progress-bar-warning">{{aircraft.timeline.flightHoursInCompany}}</span></li>
+                </ul>
             </div>
         </div>
     </div>

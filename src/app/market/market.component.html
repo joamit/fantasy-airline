@@ -8,30 +8,30 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-3 col-md-12 col-sm-12">
-                    <div class="card" [routerLink]="['/aircraft-detail']" style="cursor: pointer;">
+                <div class="col-lg-3 col-md-12 col-sm-12" *ngFor="let aircraft of aircrafts">
+                    <div class="card" [routerLink]="['/aircraft-detail', aircraft.id]" style="cursor: pointer;">
                         <div class="card-header" style="background-color: white;">
-                            <h5 class="text-success"><img class="text-center" src="../../assets/img/logo/boeing-logo.png" height="32" width="32"/> Boeing 747-008</h5>
+                            <h5 class="text-success"><img class="text-center" src="{{aircraft.imageUrl}}" height="32" width="32"/> {{aircraft.name}}</h5>
                         </div>
                         <div class="card-content">
                             <div class="row">
                                 <div class="col-md-12">
                                     <ul class="category list-group list-group-flush text-left">
-                                        <li class="list-group-item">Registration<span class="badge progress-bar-primary">T9-0F9</span></li>
-                                        <li class="list-group-item">Cost<span class="badge progress-bar-danger">$ 78987</span></li>
-                                        <li class="list-group-item">Flight Hours<span class="badge progress-bar-danger">187234</span></li>
+                                        <li class="list-group-item">Registration<span class="badge progress-bar-primary">{{aircraft.registrationNumber}}</span></li>
+                                        <li class="list-group-item">Cost<span class="badge progress-bar-danger">$ {{aircraft.cost}}</span></li>
+                                        <li class="list-group-item">Flight Hours<span class="badge progress-bar-danger">{{aircraft.timeline.totalFlightHours}}</span></li>
                                         <li class="list-group-item">Location
                                             <div class="row">
                                                 <div class="col-md-12">
-                                                    <span class="category text-success">Warsaw, Poland</span>
+                                                    <span class="category text-success">{{aircraft.route.origin}}</span>
                                                 </div>
                                             </div>
                                         </li>
                                         <li class="list-group-item">Configuration
                                             <div class="row">
-                                                <div class="col-md-4"><span class="text-info">E 98</span></div>
-                                                <div class="col-md-4"><span class="text-primary">B 12</span></div>
-                                                <div class="col-md-4"><span class="text-success">F 2</span></div>
+                                                <div class="col-md-4"><span class="text-info">E {{aircraft.optional.seatLayout.E}}</span></div>
+                                                <div class="col-md-4"><span class="text-primary">B {{aircraft.optional.seatLayout.B}}</span></div>
+                                                <div class="col-md-4"><span class="text-success">F {{aircraft.optional.seatLayout.F}}</span></div>
                                             </div>
                                         </li>
                                     </ul>

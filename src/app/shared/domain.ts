@@ -25,6 +25,7 @@ export interface Aircraft {
     name: string;
     registrationNumber: string;
     imageUrl: string;
+    cost: number;
     dimension: Dimension;
     route: Route;
     optional: Optional;

@@ -7,6 +7,7 @@ const aircrafts: Aircraft[] = [
         name: 'SAAB 340',
         registrationNumber: 'JB-TY8',
         imageUrl: '../../../assets/img/aircrafts/antonov-an26.png',
+        cost: 89234,
         dimension: {
             length: 18,
             wingspan: 18,

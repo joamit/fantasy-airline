@@ -1,4 +1,6 @@
 import {Component, OnInit} from '@angular/core';
+import {MarketService} from '../shared/market.service';
+import {Aircraft} from '../shared/domain';
 
 @Component({
     selector: 'app-market',
@@ -6,9 +8,13 @@ import {Component, OnInit} from '@angular/core';
     styleUrls: ['./market.component.css']
 })
 export class MarketComponent implements OnInit {
-    constructor() {
+
+    aircrafts: Aircraft[];
+
+    constructor(private marketService: MarketService) {
     }
 
     ngOnInit() {
+        this.aircrafts = this.marketService.getAircrafts();
     }
 }
